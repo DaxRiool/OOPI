@@ -2,7 +2,7 @@
 
 class Player
 {
-    private $name = "john doe";
+    private $name;
     private $pinsThrown = [];
 
     public function __construct($name)
@@ -22,6 +22,5 @@ class Player
 
     public function getName()
     {
-        echo $name;
     }
 }
