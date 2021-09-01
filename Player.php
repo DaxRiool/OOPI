@@ -18,6 +18,7 @@ class Player
     public function getPinsThrown()
     {
         $pinsThrown = [rand(1, 5), rand(1, 5)];
+        echo $pinsThrown;
     }
 
     public function getName()
