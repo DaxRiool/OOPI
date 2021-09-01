@@ -7,7 +7,7 @@ class Player
 
     public function __construct($name)
     {
-        $name;
+        $name = "john doe";
     }
 
     public function throwPins($one, $two)
@@ -17,11 +17,11 @@ class Player
 
     public function getPinsThrown()
     {
-        echo $pinsThrown; 
+        $pinsThrown = [rand(1, 5), rand(1, 5)];
     }
 
     public function getName()
     {
-        echo $name;
+        echo "john doe";
     }
 }
