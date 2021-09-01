@@ -22,6 +22,6 @@ class Player
 
     public function getName()
     {
-        echo "john doe";
+        echo $name;
     }
 }
