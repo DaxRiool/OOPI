@@ -1,0 +1,36 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Tour",
+  "steps": [
+    {
+      "file": "Player.php",
+      "description": "Hier komt de naam van de speler in te staan",
+      "line": 5
+    },
+    {
+      "file": "Player.php",
+      "description": "Dit is waar je het aantal gegooide kegels in een array gaat opslaan. De array zou er bijvoorbeeld na 2 rondes zo uit kunnen zien: \n\nprivate $pinsThrown = [[4,2],[2,3]];",
+      "line": 6
+    },
+    {
+      "file": "Player.php",
+      "description": "Dit is waar je de naam van de speler ontvant nadat een new Player('John Doe') ergens wordt aangemaakt. In deze functie is $name dan dus gelijk aan 'John Doe'. Zorg dat de waarde in de $name property komt te staan van de class, nu is het namelijk alleen nog een lokaal variabel.",
+      "line": 10
+    },
+    {
+      "file": "Player.php",
+      "description": "Hier komt de logica om een array item met $one en $two daarin toe te voegen aan de $this->pinsThrown property van de class.",
+      "line": 15
+    },
+    {
+      "file": "Player.php",
+      "description": "Omdat de property waar de pins in staan private is kunnen we hier niet zomaar bij vanaf de buitenkant. Om alvast voor te bereiden op het bouwen van het scoreboard zorgen we dat deze functie simpelweg de $this->pinsThrown property returnt.\n\nZo kunnen we alleen deze property muteren via de throwPins() functie, omdat deze wel blootgesteld is als public functie.",
+      "line": 20
+    },
+    {
+      "file": "Player.php",
+      "description": "Met de getName functie doen we hetzelfde. Er is geen reden om de naam van de speler tijdens het spel te veranderen, dus volgen we hier dezelfde structuur als de pinsThrown functie. Alleen daar is het punt van blootstellen de constructor.",
+      "line": 25
+    }
+  ]
+}
