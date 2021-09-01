@@ -12,13 +12,12 @@ class Player
 
     public function throwPins($one, $two)
     {
-        $score = [$one, $two];
+        $pinsThrown = [$one, $two];
     }
 
     public function getPinsThrown()
     {
-        $score = $score;
-        echo $score;
+        echo $pinsThrown; 
     }
 
     public function getName()
