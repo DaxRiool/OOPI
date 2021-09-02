@@ -17,8 +17,7 @@ class Player
 
     public function getPinsThrown()
     {
-        echo $this->pinsThrown[0];
-        echo $this->pinsThrown[1];
+        $this->score = $this->pinsThrown[0] + $this->pinsThrown[1];
     }
 
     public function getName()
