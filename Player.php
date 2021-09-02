@@ -7,21 +7,23 @@ class Player
 
     public function __construct($name)
     {
-        $name = "john doe";
+        $this->name = $name;
     }
 
     public function throwPins($one, $two)
     {
-        $pinsThrown = [$one, $two];
+        $this->pinsThrown = [$one, $two];
     }
 
     public function getPinsThrown()
     {
-        $pinsThrown = [rand(1, 5), rand(1, 5)];
-        echo $pinsThrown;
+        echo $this->pinsThrown[0];
+        echo $this->pinsThrown[1];
     }
 
     public function getName()
     {
+        $name = "piet";
+        echo $this->name;
     }
 }
