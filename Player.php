@@ -17,12 +17,12 @@ class Player
 
     public function getPinsThrown()
     {
-        $this->score = $this->pinsThrown[0] + $this->pinsThrown[1];
+        $score = $this->pinsThrown[0] + $this->pinsThrown[1];
+        return $score;
     }
 
     public function getName()
     {
-        $name = "piet";
         echo $this->name;
     }
 }
