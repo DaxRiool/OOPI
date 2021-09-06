@@ -36,14 +36,11 @@ class BowlingGame
     private function playLastRound()
     {
         if ($this->round == 11) {
+            echo $this->scoreboard;
         }
     }
 
     public function play()
     {
-        askPlayerNames();
-        addPlayer($name);
-        playRound();
-        playLastRound();
     }
 }
