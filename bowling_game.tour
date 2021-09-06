@@ -1,0 +1,76 @@
+{ 
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "bowling_game",
+  "steps": [
+    {
+      "file": "BowlingGame.php",
+      "description": "Hier komt een object met het type ScoreBoard in.",
+      "line": 5
+    },
+    {
+      "file": "BowlingGame.php",
+      "description": "Hier komt een array met spelers in. Dit zijn objecten van de `Player` class.",
+      "line": 6
+    },
+    {
+      "file": "BowlingGame.php",
+      "description": "Hier kan je bijhouden bij welke ronde het spel is. Dat is handig voor als je die context nodig hebt in meerdere functies, maar ze niet de hele tijd door wilt geven in de functie arguments.",
+      "line": 7
+    },
+    {
+      "file": "BowlingGame.php",
+      "description": "Dit is een goede plek om alvast wat dingen klaar te zetten. Denk hierbij aan het maken van een scoreboard object, en het zetten van de ronde op 1.\n\nDe reden dat hier return $this; staat is simpel. Je kan dan gebruik maken van method chaining zoals in het voorbeeld in Jarvis.",
+      "line": 11
+    },
+    {
+      "file": "BowlingGame.php",
+      "description": "Dit is een functie die verantwoordelijk is om met een naam, een player toe te voegen in het spel. Dat betekent heel praktisch dat er een nieuw object toegevoegd moet worden aan de $this->players property.",
+      "line": 16
+    },
+    {
+      "file": "BowlingGame.php",
+      "description": "Hier zou je kunnen vragen hoeveel spelers er mee doen, en dan vervolgens met dat aantal een loop uitvoeren om zo alle spelers aan te maken. Je kan dan de bovenstaande $this->addPlayer() functie gebruiken om de spelers toe te voegen na het opvragen van de naam",
+      "line": 21
+    },
+    {
+      "file": "BowlingGame.php",
+      "description": "Hier komt de logica voor 1 ronde te staan. Denk aan het opvragen van de score van elke speler, en het laten zien van het tussentijdse scoreboard.",
+      "line": 26,
+      "selection": {
+        "start": {
+          "line": 26,
+          "character": 1
+        },
+        "end": {
+          "line": 27,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "BowlingGame.php",
+      "description": "Bij de laatste ronde is er wat extra logica nodig om het spel af te maken. Maar ook in de spelregels is er wat speciaals aan de laatste ronde. Daarom schrijven we die logica in een andere functie. We kunnen dan detecteren in de PlayAllRounds functie of het de laatste ronde is, en dan deze functie aanroepen in plaats van de normale playRound() functie.",
+      "line": 31
+    },
+    {
+      "file": "BowlingGame.php",
+      "description": "Dit is de functie die het spel start. Je zal hier dus het vragen van de hoeveelheid spelers, en de namen in gang moeten zetten. Gelukkig heb je daar al functies voor gemaakt.",
+      "line": 36,
+      "selection": {
+        "start": {
+          "line": 36,
+          "character": 1
+        },
+        "end": {
+          "line": 37,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "bowlen.php",
+      "description": "Dit stukje is waarom je return $this; neerzet. Als je dan de class aanmaakt, en deze omhulst met hekjes() dan kan je de volgende functie op het object aanroepen. Tof right?",
+      "line": 5
+    }
+  ]
+}
