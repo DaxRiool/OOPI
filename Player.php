@@ -3,11 +3,8 @@
 class Player
 {
     private $name;
-    private $pinsThrown = [
-        [4,2],
-        [6,3]
-    ];
-
+    private $pinsThrown = [];
+ 
     public function __construct($name)
     {
         $this->name = $name;
@@ -15,17 +12,12 @@ class Player
 
     public function throwPins($one, $two)
     {
-        $this->pinsThrown = [
-        [$one, $two], 
-        [$one, $two]
-        ];
+        $this->pinsThrown[] = [$one, $two];
     }
 
     public function getPinsThrown()
     {
-        $score = [$this->pinsThrown[0], $this->pinsThrown[1]];
-        var_dump($score);
-        return $score;
+        return $this->pinsThrown;
     }
 
     public function getName()
