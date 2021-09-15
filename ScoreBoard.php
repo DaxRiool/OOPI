@@ -2,6 +2,8 @@
 
 require "Player.php";
 $bestand = new Player("Dax");
+$bestand->throwPins(rand(1, 5), rand(1, 5));
+$score = $bestand->getPinsThrown();
 class ScoreBoard
 {
     private $scores = [];
@@ -13,7 +15,11 @@ class ScoreBoard
     }
     private function calculatePlayerscore() 
     {
-        $this->score[] = $bestand->pinsThrown[0] + $bestand->pinsThrown[1];
+        for ($i = 0; $i >= 10; $i++) {
+            echo $bestand->pinsThrown[0];
+            echo $bestand->pinsThrown[1];
+            $this->score[] = $bestand->pinsThrown[0] + $bestand->pinsThrown[1];
+        }
     }
     private function calculateAllscores()
     {
@@ -25,6 +31,10 @@ class ScoreBoard
     }
     public function displayWinner()
     {
+        echo "winner is " . $this->player;
     }
 }
+
+$scoreb = new ScoreBoard("dax");
+
 ?> 

@@ -1,8 +1,10 @@
 <?php
- 
+
+require "ScoreBoard.php";
+
 class BowlingGame
 {
-    private $scoreBoard = "score";
+    private $scoreBoard;
     private $players;
     private $round;
     public $name;
@@ -16,44 +18,51 @@ class BowlingGame
     {
         $aantal = readline("hoeveel spelers wil je toevoegen? ");
         for ($i = 1; $i <= $aantal; $i++) {
-            $this->name[] = readline("wat is je naam? ");
+            $name[] = readline("wat is je naam? ");
+            $this->players[] = $name;
         }
     }
 
     private function addPlayer()
     {
-        $this->players[$this->name];
+        $a = count($this->players);
+        $b = $a - 1;
+        echo "spelers zijn" . PHP_EOL;
+        for ($q = 0; $q < $a; $q++) {
+            echo $this->players[$b][$q] . PHP_EOL;
+        }
     }
  
         
     private function playRound()
     {
         $rand = rand(0, 10);
-        $this->round++;
-        for ($j = 0; $j >= 10; $j++) {
-            echo $this->players[0] . "eerste worp " . $rand . PHP_EOL;
-            $over = 10 - $rand;
-            $rand2 = rand(0, $over);
-            if ($rand2 > 0) {
-                echo "tweede worp " . $getal . PHP_EOL;
-            } else {
-                echo "tweede worp mis" . PHP_EOL;
+        $a = count($this->players);
+        $b = $a - 1;
+        for ($k = 0; $k < $a; $k++) {
+            for ($j = 0; $j <= 10; $j++) {
+                echo $this->players[$b][$k] . " eerste worp " . $rand . PHP_EOL;
+                $over = 10 - $rand;
+                $rand2 = rand(0, $over);
+                if ($rand2 > 0) {
+                    echo "tweede worp " . $rand2 . PHP_EOL;
+                } else {
+                    echo "tweede worp mis" . PHP_EOL;
+                }
+                echo "ronde " . $j . PHP_EOL;
             }
-            echo $this->players[1] . "eerste worp " . $rand . PHP_EOL;
-            $over = 10 - $rand;
-            $rand2 = rand(0, $over);
-            if ($rand2 > 0) {
-                echo "tweede worp " . $getal . PHP_EOL;
-            } else {
-                echo "tweede worp mis" . PHP_EOL;
-            }
+            $this->round = $j;
         }
     }
 
     private function playLastRound()
     {
-        if ($this->round == 11) {
-            echo $this->scoreboard;
+        echo "ronde" . $this->round . PHP_EOL;
+        $rand = rand(0, 10);
+        $a = count($this->players);
+        $b = $a - 1;
+        for ($k = 0; $k < $a; $k++) {
+            echo $this->players[$b][$k] . " laatste worp " . $rand . PHP_EOL;
         }
     }
 
@@ -65,3 +74,5 @@ class BowlingGame
         $this->playLastRound();
     }
 }
+
+?>
