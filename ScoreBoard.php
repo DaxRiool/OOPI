@@ -1,9 +1,8 @@
 <?php
 
 require "Player.php";
-$bestand = new Player("Dax");
-$bestand->throwPins(rand(1, 5), rand(1, 5));
-$score = $bestand->getPinsThrown();
+$bestand = new Player();
+
 class ScoreBoard
 {
     private $scores = [];

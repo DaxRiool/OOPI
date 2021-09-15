@@ -1,11 +1,17 @@
 <?php
 
-require "ScoreBoard.php";
+require "Player";
 
+require "ScoreBoard.php";
+ 
+$speler = new Player();
 class BowlingGame
 {
-    private $scoreBoard;
-    private $players;
+    private $scoreBoard = new ScoreBoard();
+    private $players = [
+        $speler
+    ];
+
     private $round;
     public $name;
     
