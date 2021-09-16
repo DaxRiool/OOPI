@@ -1,6 +1,6 @@
 <?php
 
-require "Player.php";
+require_once "Player.php";
 
 require "ScoreBoard.php";
 
