@@ -1,7 +1,7 @@
 <?php
 
 require "Player.php";
-$bestand = new Player();
+$bestand = new Player("dax ");
 
 class ScoreBoard
 {
@@ -17,12 +17,13 @@ class ScoreBoard
         for ($i = 0; $i >= 10; $i++) {
             echo $bestand->pinsThrown[0];
             echo $bestand->pinsThrown[1];
-            $this->score[] = $bestand->pinsThrown[0] + $bestand->pinsThrown[1];
+            $this->scores[] = $bestand->pinsThrown[0] + $bestand->pinsThrown[1];
         }
     }
     private function calculateAllscores()
     {
         $this->score[] = $bestand->pinsThrown[0] + $bestand->pinsThrown[1];
+        $score = $player->getPinsThrown();
     }
     public function displayScores()
     {

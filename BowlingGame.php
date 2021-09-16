@@ -2,11 +2,7 @@
 
 require "Player.php";
 
-require "ScoreBoard";
-
-$scoreBoard = new ScoreBoard();
-$players = new Player();
-
+require "ScoreBoard.php";
 
 class BowlingGame
 {
@@ -49,6 +45,7 @@ class BowlingGame
         $b = $a - 1;
         for ($k = 0; $k < $a; $k++) {
             for ($j = 0; $j <= 10; $j++) {
+                echo "ronde " . $j . PHP_EOL;
                 echo $this->players[$b][$k] . " eerste worp " . $rand . PHP_EOL;
                 $over = 10 - $rand;
                 $rand2 = rand(0, $over);
@@ -57,7 +54,7 @@ class BowlingGame
                 } else {
                     echo "tweede worp mis" . PHP_EOL;
                 }
-                echo "ronde " . $j . PHP_EOL;
+                $this->scoreBoard = $this->scoreBoard + $rand + $rand2;
             }
             $this->round = $j;
         }
@@ -65,13 +62,15 @@ class BowlingGame
 
     private function playLastRound()
     {
-        echo "ronde" . $this->round . PHP_EOL;
+        echo "ronde " . $this->round . PHP_EOL;
         $rand = rand(0, 10);
         $a = count($this->players);
         $b = $a - 1;
         for ($k = 0; $k < $a; $k++) {
             echo $this->players[$b][$k] . " laatste worp " . $rand . PHP_EOL;
         }
+        $this->scoreBoard = $this->scoreBoard + $rand;
+        echo "de score is " . $this->scoreBoard;
     }
 
     public function play()
