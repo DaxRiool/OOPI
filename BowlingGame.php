@@ -2,7 +2,7 @@
 
 require_once "Player.php";
 
-require "ScoreBoard.php";
+require_once "ScoreBoard.php";
 
 class BowlingGame
 {
