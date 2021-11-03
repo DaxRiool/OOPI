@@ -1,12 +1,10 @@
 <?php
 
-require_once "Player.php";
-
 require_once "ScoreBoard.php";
 
 class BowlingGame
 {
-    private $scoreBoard;
+    private $scoreBoard = [];
     private $players = [
     ];
 
@@ -40,12 +38,12 @@ class BowlingGame
         
     private function playRound()
     {
-        $rand = rand(0, 10);
         $a = count($this->players);
         $b = $a - 1;
         for ($k = 0; $k < $a; $k++) {
             for ($j = 0; $j <= 10; $j++) {
                 echo "ronde " . $j . PHP_EOL;
+                $rand = rand(0, 10);
                 echo $this->players[$b][$k] . " eerste worp " . $rand . PHP_EOL;
                 $over = 10 - $rand;
                 $rand2 = rand(0, $over);
@@ -54,8 +52,9 @@ class BowlingGame
                 } else {
                     echo "tweede worp mis" . PHP_EOL;
                 }
-                $this->scoreBoard = $this->scoreBoard + $rand + $rand2;
+                $this->scoreBoard[$k] = $this->scoreBoard[$k] + $rand + $rand2;
             }
+            // [19], [11]
             $this->round = $j;
         }
     }
@@ -63,14 +62,19 @@ class BowlingGame
     private function playLastRound()
     {
         echo "ronde " . $this->round . PHP_EOL;
-        $rand = rand(0, 10);
         $a = count($this->players);
         $b = $a - 1;
         for ($k = 0; $k < $a; $k++) {
+            $rand = rand(0, 10);
             echo $this->players[$b][$k] . " laatste worp " . $rand . PHP_EOL;
+            $this->scoreBoard[$k] = $this->scoreBoard[$k] + $rand;
         }
-        $this->scoreBoard = $this->scoreBoard + $rand;
-        echo "de score is " . $this->scoreBoard;
+        echo "de scores zijn " . PHP_EOL;
+        $tel = count($this->scoreBoard);
+        $tel = $tel - 1;
+        for ($a = 0; $a <= $tel; $a++) {
+            echo $this->players[$tel][$a] . " " . $this->scoreBoard[$a] . PHP_EOL;
+        }
     }
 
     public function play()

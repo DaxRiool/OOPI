@@ -1,5 +1,6 @@
 <?php
 
+require "Player.php";
 $bestand = new Player("dax ");
 
 class ScoreBoard
